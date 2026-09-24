@@ -1,0 +1,13 @@
+{
+  "steps": [
+    {"text": "Go to Settings", "source_quote": "Go to Settings"},
+    {"text": "Tap Display", "source_quote": "tap Display"},
+    {"text": "Tap Navigation bar", "source_quote": "tap Navigation bar"},
+    {"text": "Select Buttons to turn off full screen gestures", "source_quote": "Select Buttons to turn off full screen gestures"}
+  ],
+  "warnings": [],
+  "conditions": [
+    {"text": "If you are using the full screen gesture function", "source_quote": "If you're using the full screen gesture function"}
+  ],
+  "missing_details": []
+}

@@ -1,0 +1,9 @@
+pydantic>=2,<3
+pytest>=8,<9
+scikit-learn>=1.4,<2
+google-genai>=0.1.0
+python-dotenv>=1.0.0
+fastapi>=0.110.0
+uvicorn>=0.28.0
+httpx>=0.27.0
+EOF
