@@ -182,7 +182,7 @@ python -m scripts.benchmark
 python -m scripts.audit_routing_scores
 ```
 
-## 👥 Team FixRoute (Samsung PRISM Hackathon Theme 2)
+## 👥 Team Primauros (Samsung PRISM Hackathon Theme 2)
 
 Built for Samsung PRISM GenAI Hackathon (3rd Edition)  
 Release Tag: PRISM_GENAI_HACKATHON_Y2026
