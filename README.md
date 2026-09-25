@@ -23,28 +23,55 @@
 
 ## 🏗️ 5-Stage System Architecture
 
-User Complaint
-│
-▼
-[1. Dual-Field Reference Router] ──► 20/20 Perfect Self-Match over SIIS Articles
-│
-▼
-[2. Grounded Extractor (Gemini)] ──► Strict Substring Quotes (Zero Hallucination)
-│
-▼
-[3. Rule-Bound Planning Layer] ──► Title (2-3 words) + Description (5-7 words, "It will...")
-│
-▼
-[4. Gated Settings Link Mapping] ──► TF-IDF Search over 578 Settings URIs (e.g. DL-0169)
-│ (Confidence & Margin Gating prevents misroutes)
-│
-▼
-[5. Response Builder & Validator] ──► ContextDeeplinkResponse + 13-Rule Validator (0 Fatal)
-│
-▼
-[Semantic Cache Layer] ──► In-Memory & Persistent Dual-Field Cache (<3ms latency)
 
----
+flowchart TD
+    subgraph Client ["Client Interface"]
+        User["📱 User Complaint (Natural Language)"]
+    end
+
+    subgraph Caching ["⚡ Semantic Acceleration Layer"]
+        Cache[("⚡ Semantic Cache<br/>Dual TF-IDF (Word + Char)<br/>&lt; 3ms Latency | $0 Cost")]
+    end
+
+    subgraph Pipeline ["🛠️ 5-Stage Grounded Orchestration Engine"]
+        Router["1. Reference Router<br/>Dual-Field TF-IDF (0.8 / 0.2)<br/><b>20/20 Perfect Self-Match</b>"]
+        Extractor["2. Grounded Step Extractor<br/>Gemini 3.6 Flash Structured Output<br/><b>Strict Substring Quotes (Zero Hallucination)</b>"]
+        Planner["3. Rule-Bound Planning Layer<br/>Title: 2-3 words (Sentence case)<br/>Description: 5-7 words ('It will...')"]
+        Gate{"4. Gated Settings Link Mapping<br/>578 One UI Deep Links<br/>Score &ge; 0.50 &amp; Margin &ge; 0.10"}
+        AutoAction["Attach One UI Deep Link<br/><b>e.g. DL-0169 Navigation Bar</b><br/>Auto-wire Action &amp; Validation URIs"]
+        ManualAction["Safe Manual Step Fallback<br/>Zero Erroneous Screen Redirects"]
+        Builder["5. Response Builder &amp; Validator<br/>ContextDeeplinkResponse<br/><b>13-Rule Validator (100% Zero-Fatal)</b>"]
+    end
+
+    subgraph Output ["🎯 One UI Execution"]
+        Response["📦 Official Response Envelope<br/>Executable Troubleshooting Plan"]
+    end
+
+    User -->|1. Check Cache| Cache
+    Cache -->|Cache Hit: 0.95ms| Response
+    Cache -->|Cache Miss| Router
+    Router --> Extractor
+    Extractor --> Planner
+    Planner --> Gate
+    Gate -->|Confident Match| AutoAction
+    Gate -->|Ambiguous Intent| ManualAction
+    AutoAction --> Builder
+    ManualAction --> Builder
+    Builder --> Response
+    Builder -.->|Auto-Populate Cache| Cache
+
+    classDef blueBox fill:#EBF3FF,stroke:#002C6C,stroke-width:2px,color:#002C6C,font-weight:bold;
+    classDef greenBox fill:#ECFDF5,stroke:#059669,stroke-width:2px,color:#065F46,font-weight:bold;
+    classDef yellowBox fill:#FEF3C7,stroke:#D97706,stroke-width:2px,color:#92400E,font-weight:bold;
+    classDef purpleBox fill:#EEF2FF,stroke:#4F46E5,stroke-width:2px,color:#312E81,font-weight:bold;
+    classDef whiteBox fill:#FFFFFF,stroke:#94A3B8,stroke-width:1.5px,color:#1E293B;
+
+    class User blueBox;
+    class Cache greenBox;
+    class Router,Extractor,Planner,AutoAction,ManualAction whiteBox;
+    class Gate yellowBox;
+    class Builder,Response purpleBox;
+
 
 ## ⚡ Quickstart Guide
 
