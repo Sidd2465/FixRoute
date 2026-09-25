@@ -23,7 +23,7 @@
 
 ## 🏗️ 5-Stage System Architecture
 
-
+```mermaid
 flowchart TD
     subgraph Client ["Client Interface"]
         User["📱 User Complaint (Natural Language)"]
@@ -71,8 +71,7 @@ flowchart TD
     class Router,Extractor,Planner,AutoAction,ManualAction whiteBox;
     class Gate yellowBox;
     class Builder,Response purpleBox;
-
-
+```
 ## ⚡ Quickstart Guide
 
 ### Option 1: Run with Docker (Recommended for Evaluators)
