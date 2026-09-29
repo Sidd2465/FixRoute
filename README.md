@@ -209,9 +209,6 @@ python -m scripts.audit_routing_scores
 ```
 ## 📺 Demo Video & Presentation
 
-| 🎥 Demo Video (60s Walkthrough) | 📊 Official Submission Deck |
-| :---: | :---: |
-| [![Watch Demo Video](https://img.shields.io/badge/Watch_Demo_Video-YouTube-red?style=for-the-badge&logo=youtube)]((https://youtu.be/NajmiFmo0pI?si=ycIgxQ8I-a0eZtZf)) | [![Download PPTX](https://img.shields.io/badge/Presentation-Download_PPTX-blue?style=for-the-badge&logo=microsoftpowerpoint)](ThaparUniversity_Primauros_Theme2.pptx) |
 
 > 🔗 **Direct Demo Video Link:** [Watch FixRoute End-to-End Walkthrough](https://youtu.be/NajmiFmo0pI?si=ycIgxQ8I-a0eZtZf)  
 > 📑 **AI Usage Disclosure:** [AI_USAGE_DISCLOSURE.md](docs/AI_USAGE_DISCLOSURE.md) (Fully Documented & Signed)
